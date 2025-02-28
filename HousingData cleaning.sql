@@ -224,8 +224,7 @@ From Portfolio_Project.dbo.HousingData
 
 
 
-Select *
-From WITH RowNumCTE AS(
+;WITH RowNumCTE AS(
 Select *,
 	ROW_NUMBER() OVER (
 	PARTITION BY ParcelID,
@@ -246,7 +245,7 @@ Where row_num > 1
 Order by PropertyAddress
 
 
-ALTER TABLE PortfolioProject.dbo.NashvilleHousing
+ALTER TABLE Portfolio_Project.dbo.HousingData
 DROP COLUMN OwnerAddress, TaxDistrict, PropertyAddress, SaleDate
 
 
